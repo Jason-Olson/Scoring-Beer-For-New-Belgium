@@ -31,16 +31,20 @@ def score_training(df,names_used_list):
         pos_right_array = np.empty_like(names_used_list)
         col_list.append("{}_right".format(str(flav)))
         col_list.append("{}_poss".format(str(flav)))
-        for i,name in names_used_list:
+        for i,name in enumerate(names_used_list):
             temp = df.loc[(df['Full Name']== name) & (df['Flavor']==flav)]
-            pos_right_array[i] = temp.shape[0]
             num_right_array[i] = temp[temp['correct']==1].shape[0]
-            if wrong_dict[i]==None:
-                wrong_dict[i] ={flav:list(temp.loc[temp['Incorrect']==1,'relational attributes'])}
-            else:
-                wrong_dict[i][flav] = list(temp.loc[temp['Incorrect']==1,'relational attributes'])
-
+            pos_right_array[i] = temp.shape[0]
+            if num_right_array[i] != pos_right_array[i]:
+                if wrong_dict[i]==None:
+                    wrong_dict[i] ={flav:list(temp.loc[temp['Incorrect']==1,'relational attributes'])}
+                else:
+                    wrong_dict[i][flav] = list(temp.loc[temp['Incorrect']==1,'relational attributes'])
+        stacked = np.column_stack((stacked,num_right_array,pos_right_array))
     col_list.append('wrong_dict')
+    stacked = np.column_stack((stacked,wrong_dict))
+    new_df = pd.DataFrame(stacked,columns=col_list)
+    return new_df
 
 if __name__ == '__main__':
     df = get_data()
