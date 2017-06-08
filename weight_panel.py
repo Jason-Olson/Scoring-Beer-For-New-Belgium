@@ -4,13 +4,16 @@ import numpy as np
 # curr_Month = 2
 
 def get_panel_attendance():
-    df = pd.read_excel('data/Bigslip01.Sensory.dbo.CS_SENSORY_ATTENDANCE.xlsx', header=0)
+    df = pd.read_excel('data/Bigslip01.Sensory.dbo.CS_SENSORY_ATTENDANCE2.xlsx', header=0)
     df = df.dropna()
+    df['n'] = df['n'].str.lower()
+    df['n'] = df['n'].replace('billy bletcher','bill bletcher')
+    df['n'] = df['n'].replace('matty gilliland','matt gilliland')
 
     #Seperating curr. previous month from all prior previous months
     curr_Month = df.iloc[0,2]
     prior_month_start_idx = np.where(df['att_month']!=curr_Month)[0][0]
-    names_list = df.iloc[:prior_month_start_idx,3].as_matrix()
+    names_list = df.iloc[:prior_month_start_idx,3].unique()
     names_used_list = remove_unused(names_list,df)
     df2 = make_attendance_df(names_used_list,df,prior_month_start_idx)
     return df2, names_used_list
@@ -54,6 +57,7 @@ def make_attendance_df(names_used_list,df,prior_month_start_idx):
 
 def get_training_attendance(df,names_used_list):
     df2 = pd.read_excel('data/training_att.xlsx')
+    df2['Name'] = df2['Name'].str.lower()
     # t = pd.tslib.Timestamp.now()
     # curr_Month = t.month
     # curr_Year = t.year
@@ -63,7 +67,6 @@ def get_training_attendance(df,names_used_list):
     dfa = df2.loc[df2['Attendance Type ']=='Expert Taste Panel Training']
     curr_idx = np.where((dfa['Date'].map(lambda x: (x.month)==2)) & (dfa['Date'].map(lambda x: (x.year)==2017)))[0][0]
     curr_num = _get_curr_num(dfa,curr_Month,curr_Year)
-    print(curr_num)
 
     df_curr = dfa.iloc[curr_idx:,:]
     curr_att_per = np.empty_like(names_used_list)
@@ -96,3 +99,6 @@ def _get_curr_num(dfa,curr_Month,curr_Year):
 if __name__ == '__main__':
     df,names_used_list = get_panel_attendance()
     df = get_training_attendance(df,names_used_list)
+    #editing list down to people with higher percentage
+    df = df[(df['prior_train_att']>0.05) &(df['prev_panel_att']>0.05)]
+    names_used_list = df['name'].values

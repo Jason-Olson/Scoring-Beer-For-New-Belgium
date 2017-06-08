@@ -9,10 +9,14 @@ def get_data():
     df = df[df['base beer']=='fat tire']
     df['Flavor'] = df['Flavor'].str.lower()
     df['relational attributes'] = df['relational attributes'].str.lower()
+    df['Full Name'] = df['Full Name'].str.lower()
+    df['Full Name'] = df['Full Name'].replace('billy bletcher','bill bletcher')
+    df['Full Name'] = df['Full Name'].replace('matty gilliland','matt gilliland')
+    df['Full Name'] = df['Full Name'].replace('philip pollick','phil pollick')
     return df
 
 def get_names_list():
-    with open('data/names_list.pickle', 'rb') as handle:
+    with open('data/names_list2.pickle', 'rb') as handle:
         names_used_list = pickle.load(handle)
     return names_used_list
 
