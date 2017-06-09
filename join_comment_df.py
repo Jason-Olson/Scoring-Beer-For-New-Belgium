@@ -13,6 +13,9 @@ def get_data():
     dfknown = dfknown.loc[dfknown['format']=='spike']
     dfknown['base beer'] = dfknown['base beer'].str.strip().str.lower()
     dfknown = dfknown.loc[dfknown['base beer'].isin(['fat tire', 'fat tire can'])]
+    df['Flavor'] = df['Flavor'].str.lower()
+    comment_flav_list=['ft','ft32','ftc','ftc32','ft mv','fat tire','ftwht','ft32abw','ft15','ft-c','ft-t','ft 3 day can','ftc32abw']
+    df = df.loc[df['Flavor'].isin(comment_flav_list)]
 
     df['RegName'] = df['RegName'].str.lower()
     dfknown['Full Name'] = dfknown['Full Name'].str.lower()
