@@ -15,7 +15,7 @@ def get_data():
     return X,col_names,names
 
 def create_chart(X, col_names, names,outFile):
-    fig, axes = plt.subplots(ncols=1, nrows=int(len(col_names)/2),figsize=(120,120))#,figsize=(200,100)
+    fig, axes = plt.subplots(ncols=1, nrows=int(len(col_names)/2),figsize=(10,10))#,figsize=(200,100)
     # fig, axes = plt.subplots(ncols=1, nrows=(X.shape[1]/2))
     # fig = plt.figure(figsize=(40,20))
     # ax = fig.add_subplot(111)
@@ -27,11 +27,14 @@ def create_chart(X, col_names, names,outFile):
         y_poss = X[:,xi+1]
         ax.bar(x_axis,y_poss,width,color='#F7DC6F')
         ax.bar(x_axis,y_corr,width,color='#d62728')
-        ax.set_ylabel(col_names[xi][:col_names[xi].find('_')],fontsize=20)
+        stop = min(col_names[xi].find('_'),12)
+        ax.set_ylabel(col_names[xi][:stop],fontsize=4)
         ax.set_ylim(0., 60.)
+        ax.tick_params(axis='y',which='both',left='off',right='off')
+        ax.get_yaxis().set_ticks([])
         if i ==int(len(col_names)/2-1):
             ax.set_xticks(x_axis)
-            ax.set_xticklabels(names,rotation='vertical')
+            ax.set_xticklabels(names,rotation='vertical',fontsize=4)
         else:
             ax.tick_params(
                             axis='x',          # changes apply to the x-axis
@@ -40,9 +43,17 @@ def create_chart(X, col_names, names,outFile):
                             top='off',         # ticks along the top edge are off
                             labelbottom='off')
 
-    plt.tight_layout()
-    plt.savefig(outFile)
+    # plt.tight_layout(pad=.1,w_pad=.01,h_pad=.1)
+    fig.subplots_adjust(bottom=.075,top=.975,left=.025,right=.975)
+    plt.subplots_adjust(hspace=.01)
+    # x0, x1, y0, y1 = plt.axis()
+    # print(x0, x1, y0, y1)
+    # plt.axis((x0 - 0,
+    #           x1 + 0,
+    #           y0 - 2,
+    #           y1 + 2))
+    plt.savefig(outFile,dpi=320)
 
 if __name__ == '__main__':
     X, col_names, names = get_data()
-    create_chart(X, col_names, names,'flav_acc_per_person.png')
+    create_chart(X, col_names, names,'flav_acc_per_person_reg.png')
