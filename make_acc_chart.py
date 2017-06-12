@@ -14,7 +14,7 @@ def get_data():
     X =  df.values
     return X,col_names,names
 
-def create_chart(X, col_names, names,outFile):
+def create_chart(X, col_names, names,outFile,y_top_lim):
     fig, axes = plt.subplots(ncols=1, nrows=int(len(col_names)/2),figsize=(10,10))#,figsize=(200,100)
     # fig, axes = plt.subplots(ncols=1, nrows=(X.shape[1]/2))
     # fig = plt.figure(figsize=(40,20))
@@ -29,7 +29,7 @@ def create_chart(X, col_names, names,outFile):
         ax.bar(x_axis,y_corr,width,color='#d62728')
         stop = min(col_names[xi].find('_'),12)
         ax.set_ylabel(col_names[xi][:stop],fontsize=4)
-        ax.set_ylim(0., 60.)
+        ax.set_ylim(0., y_top_lim)
         ax.tick_params(axis='y',which='both',left='off',right='off')
         ax.get_yaxis().set_ticks([])
         if i ==int(len(col_names)/2-1):
@@ -56,4 +56,4 @@ def create_chart(X, col_names, names,outFile):
 
 if __name__ == '__main__':
     X, col_names, names = get_data()
-    create_chart(X, col_names, names,'flav_acc_per_person_reg.png')
+    create_chart(X, col_names, names,'flav_acc_per_person_reg.png',60.)
