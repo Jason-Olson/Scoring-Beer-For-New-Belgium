@@ -3,6 +3,7 @@ import numpy as np
 import pickle
 from build_model import add_prediction
 from flavor_prob import score_flavor
+from add_weight import add_weight_df
 
 
 def score_batch(df):
@@ -14,13 +15,6 @@ def score_batch(df):
     # Out:__ A list of tuples ('description',prob) containing the probabilities of being TTB, the 'Flavors' present, or 'Not TTB but uncertain why'
     ###
 
-    '''move to weight function
-    df = df[df['format'] != 'spike']
-    '''
-
-    #weight functionality to be added soon...Uniform for now
-    ###
-    df['weight'] = 1.0/df.shape[0]
     X = df[['mcFresh', 'pred_correct', 'flav_dict', 'weight']].values
     mcFresh = 0
     pred_correct = 1
@@ -76,10 +70,13 @@ if __name__ == '__main__':
         df = pd.read_pickle('data/joined_results.pickle')
         dfco = df[df['correct']==1]
         dfttb = df[df['mcFresh']==1]
-        dfttb= dfttb.sample(10)
+        dfttb= dfttb.sample(10,random_state=42)
         df = pd.concat([df,dfttb])
         #Run xgboost model to get our confidence in comments score
         df = add_prediction(df)
         #Adds flavor probability dictionary to dataframe
         df = score_flavor(df)
+        #add weight
+        df = add_weight_df(df)
+        # for Uniform weighting:  df['weight'] = 1.0/df.shape[0]
         batch_panel_results = score_batch(df)
