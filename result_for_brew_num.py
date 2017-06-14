@@ -61,7 +61,14 @@ def _add_to_out_dict(out_dict,k,v,x):
         return out_dict
 
 
-
+def preprocess(df,nlp=None):
+    df = add_prediction(df)
+    #Adds flavor probability dictionary to dataframe
+    df = score_flavor(df,nlp)
+    #add weight
+    df = add_weight_df(df)
+    # for Uniform weighting:  df['weight'] = 1.0/df.shape[0]
+    return df
 
 
 

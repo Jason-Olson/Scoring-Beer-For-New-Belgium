@@ -35,10 +35,15 @@ def flav_dict_from_pickle():
         flav_dict = pickle.load(handle)
     return flav_dict
 
-def score_flavor(df,flav_dict):
+def score_flavor(df,nlp=None):
+    #get flavor dict
+    flav_dict = flav_dict_from_pickle()
+
     X = df[['cClarity', 'cAroma', 'cFlavor', 'cMouthfeel', 'cFresh',
             'cNotFresh']].values
-    nlp = spacy.load('en')
+    if not 'nlp' in locals():
+        print("Loading English Module...")
+        nlp = spacy.load('en')
 
     out_list = []
     for i in range(X.shape[0]):
@@ -75,7 +80,10 @@ def score_flavor(df,flav_dict):
 
 if __name__ == '__main__':
     # flav_dict = create_flavor_dictionary()
-    flav_dict = flav_dict_from_pickle()
+
     df = pd.read_pickle('data/joined_results.pickle')
     df = df[df['correct']==1]
-    df = score_flavor(df,flav_dict)
+    if not 'nlp' in locals():
+        print("Loading English Module...")
+        nlp = spacy.load('en')
+    df = score_flavor(df,nlp)
