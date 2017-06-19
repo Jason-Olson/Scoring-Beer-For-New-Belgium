@@ -8,9 +8,9 @@ plt.style.use('ggplot')
 plt.close('all')
 
 
-def make_violin(ttb_out,thres,point = .90):
+def make_violin(ttb_out,thres,outfile,point = .90):
     thres = thres/100.0
-    fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(8, 2))
+    fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(3.1, 2))
 
     axes.violinplot(ttb_out, points=200, vert=False, widths=1.1,
                           showmeans=True, showextrema=False, showmedians=False, bw_method=0.5)
@@ -24,11 +24,11 @@ def make_violin(ttb_out,thres,point = .90):
     axes.axvspan(red_background_start, thres, facecolor='r', alpha=0.1)
     axes.axvspan(thres, 1, facecolor='g', alpha=0.1)
     axes.get_yaxis().set_ticks([1])
-    axes.set_title('TTB Indicator', fontsize=14)
-    axes.set_ylabel('Liklihood', fontsize=8)
-    axes.set_xlabel('TTB Score', fontsize=8)
+    axes.set_title('TTB Indicator', fontsize=10)
+    axes.set_ylabel('Liklihood', fontsize=6)
+    axes.set_xlabel('TTB Score', fontsize=6)
     axes.set_xlim([red_background_start, 1])
-    axes.text(ttb_out.mean()-.005, 1.05, u'mean',rotation='vertical',fontsize=6,color="#F8766D")
+    axes.text(ttb_out.mean()-.010, 1.05, u'mean',rotation='vertical',fontsize=5,color="#F8766D")
 
     axes.plot([point], [1], 'o')
     axes.annotate(arrow_text, xy=(point, 1), xytext=(point+.01, 1.4),
@@ -37,11 +37,11 @@ def make_violin(ttb_out,thres,point = .90):
     axes.set_yticklabels([])
     plt.tight_layout()
     fig.patch.set_facecolor('#ffffe6')
-    plt.savefig('graphs/ttb_violin.png',dpi=400,facecolor=fig.get_facecolor(), edgecolor='none')
+    plt.savefig(outfile,dpi=400,facecolor=fig.get_facecolor(), edgecolor='none')
 
 if __name__ == '__main__':
     df = get_data()
     out_dict = get_summary(df)
     ttb_out = remove_outliers(out_dict)
     thres = get_cut_threshold(ttb_out)
-    make_violin(ttb_out,thres)
+    make_violin(ttb_out,thres,'graphs/ttb_violin7.png')

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Jason Olson">
     <link rel="icon" href="../../favicon.ico">
 
     <title>TTP Summary</title>
@@ -73,7 +73,7 @@
     <div class="container theme-showcase" role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
+      <div class="jumbotron" style="border-radius: 25px">
         <!-- style="background-image: url({{ url_for('static', filename='images/new_belgium.png') }}) ,background-repeat:no-repeat"> -->
         <!-- <h1> </h1>
         <p>Expert Tasting Panel</p> -->
@@ -99,8 +99,14 @@
       </div>
 
       <!-- style="background-color: #000066 -->
-      <h1>{{b_num}}</h1>
+      <h1 style="text-align:left">{{b_num}}</h1>
+      <p style="text-align: left;">
+        <img class="card-img" src='static/images/ttb_violin7.png'  alt="Card image" style="border-radius: 25px;">
+      </p>
       <p>Tasters:  |  {{name}}  | </p>
+      <p style="text-align: left;">
+        <img class="card-img" src='static/images/word_cloud3.png'  alt="Card image" style="border-radius: 25px;">
+      </p>
       <br />
         <h1>
            <ul class="list-group">
@@ -110,9 +116,13 @@
             </ul>
         </h1>
 			<br />
+      <p style="text-align: left;">
+        <img class="card-img" src='static/images/histogram_ttb_r.png'  alt="Card image" style="border-radius: 25px;">
+      </p>
       <br />
 			   <!-- <h1>{{priority}}</h1> -->
 			<br />
+
 
     </div> <!-- /container -->
 

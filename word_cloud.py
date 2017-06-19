@@ -20,7 +20,7 @@ def gen_word_could(text,out_file):
 
     # lower max_font_size
     wordcloud = WordCloud().generate(text)#max_font_size=40
-    plt.figure(figsize=(8,4))
+    plt.figure(figsize=(3,2))
     plt.imshow(wordcloud, interpolation="bilinear")
     plt.axis("off")
     plt.savefig(out_file,dpi=400,facecolor='#ffffe6', edgecolor='none')
@@ -49,9 +49,9 @@ def word_cloud_by_df(df,nlp,outfile):
     lem_word_string = lem_word_string.replace('salazar',"")
     lem_word_string = lem_word_string.replace(' bg ',"")
     lem_word_string = lem_word_string.replace(' tv ',"")
-    lem_word_string = lem_word_string.replace(' cody ',"")
+    lem_word_string = lem_word_string.replace('cody',"")
     lem_word_string = lem_word_string.replace(' mc ',"")
-    lem_word_string = lem_word_string.replace(' grady ',"")
+    lem_word_string = lem_word_string.replace('grady',"")
     lem_word_string = lem_word_string.replace(' gr ',"")
     lem_word_string = lem_word_string.replace('_eh',"")
     lem_word_string = lem_word_string.replace('jeff',"")
@@ -61,6 +61,7 @@ def word_cloud_by_df(df,nlp,outfile):
     lem_word_string = lem_word_string.replace('penelope',"")
     lem_word_string = lem_word_string.replace('tamar',"")
     lem_word_string = lem_word_string.replace('pd',"")
+    lem_word_string = lem_word_string.replace('zb',"")
     lem_word_string = lem_word_string.replace('dm',"dms")
 
     gen_word_could(lem_word_string,outfile)
@@ -86,5 +87,5 @@ if __name__ == '__main__':
         nlp = spacy.load('en')
         nlp.vocab["thin"].is_stop = False
     # gen_word_could(text,'word_cloud.png')
-    outfile = 'graphs/word_cloud.png'
+    outfile = 'graphs/word_cloud3.png'
     lem_word_string, text = word_cloud_by_df(df,nlp,outfile)
