@@ -98,14 +98,17 @@
 
       </div>
 
+
       <!-- style="background-color: #000066 -->
       <h1 style="text-align:left">{{b_num}}</h1>
       <p style="text-align: left;">
-        <img class="card-img" src='static/images/ttb_violin7.png'  alt="Card image" style="border-radius: 25px;">
+        <img class="card-img" src= {{ out_v }}  alt="Card image" style="border-radius: 25px;">
+        <!-- <img class="card-img" src='static/images/ttb_violin7.png'  alt="Card image" style="border-radius: 25px;"> -->
       </p>
       <p>Tasters:  |  {{name}}  | </p>
       <p style="text-align: left;">
-        <img class="card-img" src='static/images/word_cloud3.png'  alt="Card image" style="border-radius: 25px;">
+        <img class="card-img" src= {{ out_w }}  alt="Card image" style="border-radius: 25px;">
+        <!-- <img class="card-img" src='static/images/word_cloud3.png'  alt="Card image" style="border-radius: 25px;"> -->
       </p>
       <br />
         <h1>
@@ -117,7 +120,8 @@
         </h1>
 			<br />
       <p style="text-align: left;">
-        <img class="card-img" src='static/images/histogram_ttb_r.png'  alt="Card image" style="border-radius: 25px;">
+        <img class="card-img" src= {{ out_h }}   alt="Card image" style="border-radius: 25px;">
+        <!-- <img class="card-img" src='static/images/histogram_ttb_r.png'  alt="Card image" style="border-radius: 25px;"> -->
       </p>
       <br />
 			   <!-- <h1>{{priority}}</h1> -->

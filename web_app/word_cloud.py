@@ -38,9 +38,7 @@ def word_cloud_by_df(df,nlp,outfile):
     text = text.replace('\'',"")
     text = text.replace('\n',"")
     text = text.replace('-tim',"")
-
     lem_word_string = lemmatize_words(nlp,text)
-
     lem_word_string = lem_word_string.replace('kelly',"")
     lem_word_string = lem_word_string.replace('aaron',"")
     lem_word_string = lem_word_string.replace(' tim ',"")
