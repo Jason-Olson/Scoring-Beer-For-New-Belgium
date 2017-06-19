@@ -26,6 +26,10 @@ def gen_word_could(text,out_file):
     plt.savefig(out_file,dpi=400,facecolor='#ffffe6', edgecolor='none')
 
 def word_cloud_by_df(df,nlp,outfile):
+    ## In:  df  - Pandas DataFrame ALREADY filtered
+    #       nlp - spacy nlp object so it doesnt have to load
+    #       outfile - string containing the path and name of the saved .png (ex. 'outfile.png')
+    ##
     df = df.replace(np.nan, '', regex=True)
     X = df[['cClarity', 'cAroma', 'cFlavor', 'cMouthfeel', 'cFresh','cNotFresh']].values
     text = ''.join([''.join(str(row).lower()) for row in X])
@@ -60,7 +64,6 @@ def word_cloud_by_df(df,nlp,outfile):
     lem_word_string = lem_word_string.replace('dm',"dms")
 
     gen_word_could(lem_word_string,outfile)
-    gen_word_could(text,'graphs/word_cloud_text.png')
     return lem_word_string, text
 
 def lemmatize_words(nlp,words):
