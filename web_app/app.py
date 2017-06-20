@@ -49,22 +49,19 @@ def index():
 #170111001.0
 @app.route('/', methods=['POST'])
 def my_form_post():
-    i = np.random.randint(10,200)
-    print(i)
     text = request.form['text']
+    i = int(text)
     # text = 160112004
     name_string = "  |  ".join(df.loc[(df['BrewNumber']==float(text)) & (df['isValidated']==1),'RegName'].values)
     results = dfs.loc[dfs[0]==float(text),'results_dict'].values[0]
-    # out_results = []
-    # for res in results:
-    #     if res[1] >= .01:
-    #         out_results.append(res)
-    # processed_text = text.upper()
-    # return processed_text
 
-    print('here')
+    out_results = []
+    for res in results:
+        if res[1] >= .008:
+            out_results.append(res)
+
+
     out_violin = 'static/images/ttb_violin{}.png'.format(int(i))
-    print(out_violin)
     out_hist = 'static/images/histogram_ttb{}.png'.format(int(i))
     out_word = 'static/images/word_cloud{}.png'.format(int(i))
 
@@ -86,7 +83,7 @@ def my_form_post():
     return render_template(
         'index.html',
         b_num = text,
-        results_tup = results,
+        results_tup = out_results,
         name = name_string,
         out_v = out_violin,
         out_h = out_hist,

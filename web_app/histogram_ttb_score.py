@@ -9,8 +9,11 @@ plt.close('all')
 
 def make_histo(df,outfile):
     score_tup_list = df.iloc[0,1]
-    x_labels = [x[0] for x in score_tup_list]
-    y_values = [x[1] for x in score_tup_list]
+    #Adjustment for probability threshold
+    # x_labels = [x[0] for x in score_tup_list]
+    # y_values = [x[1] for x in score_tup_list]
+    x_labels = [x[0] for x in score_tup_list if x[1] >=.008]
+    y_values = [x[1] for x in score_tup_list if x[1] >=.008]
 
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(3, 3))
     x_axis = np.arange(len(x_labels))
