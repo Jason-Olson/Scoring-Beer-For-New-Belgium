@@ -11,7 +11,7 @@ Slides at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_JKKvwMSkTP
 ![training](charts/imgs/training_data.png)
 ![cheers](charts/imgs/cheers.png)
 ![top](charts/imgs/nbb_web_app_top.png)
-![bottom](charts/imgs/nbb\nbb_web_app_bottom.png)
+![bottom](charts/imgs/nbb_web_app_bottom.png)
 
 
 
