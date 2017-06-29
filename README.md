@@ -5,6 +5,10 @@ Slides at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_JKKvwMSkTP
 
 
 ![overview](charts/imgs/project_overview.png)
+![cluster](charts/imgs/k_cluster.png)
+![model](charts/imgs/model_overview.png)
+![training](charts/imgs/training_data.png)
+![cheers](charts/imgs/cheers.png)
 
 New Belgium brewery wants some help turning the comments data they collect during their beer tastings into statistically analyzable data.  They want to turn comments like "cheesy" into a tag like Isovaleric2 (where the 2 describes the intensity of the flavor).
 
