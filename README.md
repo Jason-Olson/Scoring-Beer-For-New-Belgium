@@ -35,9 +35,13 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 > By joining the two data tables together, an XGBoost model was built that infers the likelihood for each off-flavor
 
 
+\
+\
+\
+\
 
 ***
-* Screen shots from live web app used on New Belgium's intranet
+\\\\\Screen shots from live web app used on New Belgium's intranet
 ![top](charts/imgs/nbb_web_app_top.png)
 ![bottom](charts/imgs/nbb_web_app_bottom.png)
 ![cheers](charts/imgs/cheers.png)
