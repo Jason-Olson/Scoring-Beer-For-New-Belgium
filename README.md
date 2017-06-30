@@ -7,13 +7,21 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 ![overview](charts/imgs/project_overview.png)
 > To determine if a batch of beer meets New Belgium's quality standards, the beer is rated by 20 - 30 expert tasters and from this data, the gatekeeper makes the final call- True To Brand or Not TTB.  
 
-> Currently, the gatekeeper has to dicipher up to 6 free text comment fields per taster.  236,000 rows of this comment data _(not available)_ was used building the model.
+> Currently, the gatekeeper has to dicipher up to 6 free text comment fields per taster.  236,000 rows of this comment data _(not available)_ were used building the model.
+
+
+
+
 
 
 ![training](charts/imgs/training_data.png)
 > The other data set for this project was data recording the accuracy of each taster during training.
 
 > In training, a known "off-flavor" is spiked into the beer. The chart shows how historically accurate each taster has been identifying each "off-flavor"
+
+
+
+
 
 
 ![cluster](charts/imgs/k_cluster.png)
