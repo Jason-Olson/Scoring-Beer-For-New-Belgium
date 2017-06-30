@@ -45,10 +45,10 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 * A word cloud pulled from their comments
 * The flavor summary
 
-/
-/
-/
-/
+\
+\
+\
+\
 
 > And the best part - No more flipping through spreadsheets!!
 
