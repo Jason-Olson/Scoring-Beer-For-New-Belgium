@@ -16,7 +16,7 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 ![training](charts/imgs/training_data.png)
 > The other data set for this project were accuracy records for each taster during training.
 
-> In training, a known "off-flavor" is spiked into the beer. The chart shows how historically accurate each taster has been identifying each "off-flavor."  A red column would be "perfect"
+> In training, a known "off-flavor" is spiked into the beer. The chart shows how historically accurate each taster is at identifying each "off-flavor."  A red column would be "perfect for that off-flavor"
 
 \
 \
@@ -30,7 +30,14 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 \
 \
 ![model](charts/imgs/model_overview.png)
+> spaCy was used to perform Natural Language Processing on the comment data to pull out the "off-flavors"
 
+> By joining the two data tables together, an XGBoost model was able to be built that infers the likelihood for each off-flavor
+
+\
+\
+\
+\
 ![cheers](charts/imgs/cheers.png)
 ![top](charts/imgs/nbb_web_app_top.png)
 ![bottom](charts/imgs/nbb_web_app_bottom.png)
