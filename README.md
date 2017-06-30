@@ -1,11 +1,13 @@
 # Scoring Beers For New Belgium
 ### Building a model to interpret free text and predict a score
 
-Slides at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_JKKvwMSkTPeRAsvcDAzBeEdkMxWl9er1vY/edit#slide=id.gcb9a0b074_1_0)
+Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_JKKvwMSkTPeRAsvcDAzBeEdkMxWl9er1vY/edit#slide=id.gcb9a0b074_1_0)
 
-> To determine if a batch of beer meets New Belgium's quality standards, the beer is rated by 20 - 30 expert tasters and from this data, the gatekeeper makes the final call.  Currently, the gatekeeper has to dicipher up to 6 free text comment fields per taster, this project provides an accurate summary with the click of one button
 
 ![overview](charts/imgs/project_overview.png)
+> To determine if a batch of beer meets New Belgium's quality standards, the beer is rated by 20 - 30 expert tasters and from this data, the gatekeeper makes the final call.  Currently, the gatekeeper has to dicipher up to 6 free text comment fields per taster, this project provides an accurate summary by the click of a button.
+
+
 ![cluster](charts/imgs/k_cluster.png)
 ![model](charts/imgs/model_overview.png)
 ![training](charts/imgs/training_data.png)
