@@ -49,7 +49,6 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 \
 \
 \
-
 > And the best part - No more flipping through spreadsheets!!
 
 ![cheers](charts/imgs/cheers.png)
