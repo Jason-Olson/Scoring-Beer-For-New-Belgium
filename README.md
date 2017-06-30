@@ -34,10 +34,10 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 
 > By joining the two data tables together, an XGBoost model was built that infers the likelihood for each off-flavor
 
-\
-\
-\
-\
+\ \
+\ \
+\ \
+\ \
 
 
 ***
