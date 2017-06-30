@@ -45,7 +45,7 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 * A word cloud pulled from their comments
 * The flavor summary
 
-> 
+>
 > And the best part - No more flipping through spreadsheets!!
 
 ![cheers](charts/imgs/cheers.png)
@@ -53,7 +53,7 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 
 
 
-New Belgium brewery wants some help turning the comments data they collect during their beer tastings into statistically analyzable data.  They want to turn comments like "cheesy" into a tag like Isovaleric2 (where the 2 describes the intensity of the flavor).
+Thanks to New Belgium Brewery for making this project possible! 
 
 
 
