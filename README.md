@@ -38,7 +38,6 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 
 \
 \
-\
 
 ***
 Screen shots from live web app used on New Belgium's intranet
