@@ -8,26 +8,21 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 > To determine if a batch of beer meets New Belgium's quality standards, the beer is rated by 20 - 30 expert tasters and from this data, the gatekeeper makes the final call- True To Brand or Not TTB.  
 
 > Currently, the gatekeeper has to dicipher up to 6 free text comment fields per taster.  236,000 rows of this comment data _(not available)_ were used building the model.
+> " "
 
-
-
-
-
-
+> " "
 ![training](charts/imgs/training_data.png)
 > The other data set for this project was data recording the accuracy of each taster during training.
 
 > In training, a known "off-flavor" is spiked into the beer. The chart shows how historically accurate each taster has been identifying each "off-flavor"
+>"  "
 
-
-
-
-
-
+>"  "
 ![cluster](charts/imgs/k_cluster.png)
 > With the help of K-means clustering, we are able to group the tasters into categories good _(yellow)_, better_(blue)_, best_(green)_ and weight each taster accordingly in the model.
+>"  "
 
-
+>"  "
 ![model](charts/imgs/model_overview.png)
 
 ![cheers](charts/imgs/cheers.png)
