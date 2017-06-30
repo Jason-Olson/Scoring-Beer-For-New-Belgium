@@ -39,6 +39,14 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 \*Screen shots from live web app used on New Belgium's intranet
 ![top](charts/imgs/nbb_web_app_top.png)
 ![bottom](charts/imgs/nbb_web_app_bottom.png)
+> Simply entering a Brew Number now returns.
+* A TTB Score
+* The tasters on that tasting panel
+* A word cloud pulled from their comments
+* The flavor summary
+
+> No more flipping through spreadsheets!
+
 ![cheers](charts/imgs/cheers.png)
 
 
