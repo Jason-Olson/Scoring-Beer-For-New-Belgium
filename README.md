@@ -16,14 +16,14 @@ Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_
 ![training](charts/imgs/training_data.png)
 > The other data set for this project were accuracy records for each taster during training.
 
-> In training, a known "off-flavor" is spiked into the beer. The chart shows how historically accurate each taster has been identifying each "off-flavor"
+> In training, a known "off-flavor" is spiked into the beer. The chart shows how historically accurate each taster has been identifying each "off-flavor."  A red column would be "perfect"
 
 \
 \
 \
 \
 ![cluster](charts/imgs/k_cluster.png)
-> With the help of K-means clustering, we are able to group the tasters into categories good _(yellow)_, better_(blue)_, best_(green)_ and weight each taster accordingly in the model.
+> With the help of K-means clustering, we are able to group the tasters into categories good _(yellow)_, better _(blue)_ , best _(green)_ and weight each taster accordingly in the model.
 
 \
 \
