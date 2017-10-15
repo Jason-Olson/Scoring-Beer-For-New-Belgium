@@ -1,7 +1,7 @@
 # Scoring Beers For New Belgium
 ### Predicting a beer's score using XGBoost,NLP, and K-means and building a web app for daily use.
 
-### UPDATE 10/14/2017:  Had to take the code down since the project is currently in use at New Belgium.  Feel free to message me with any questions.  Thanks. Jason
+### ****UPDATE 10-14-2017:  Had to take the code down since the project is currently in use at New Belgium.  Feel free to message me with any questions.  Thanks. Jason
 
 Slides available at:  [slides](https://docs.google.com/presentation/d/1J8WPJ5li_JKKvwMSkTPeRAsvcDAzBeEdkMxWl9er1vY/edit#slide=id.gcb9a0b074_1_0)
 
